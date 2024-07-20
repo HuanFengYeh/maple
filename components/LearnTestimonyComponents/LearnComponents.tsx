@@ -21,6 +21,67 @@ const StyledCardBody = styled(Card.Body)`
   line-height: 2.05rem;
 `
 
+const BasicsContent = [
+  {
+    src: "who.svg",
+    alt: "Who"
+  },
+  {
+    src: "what.svg",
+    alt: "What"
+  },
+  {
+    src: "when.svg",
+    alt: "When"
+  },
+  {
+    src: "where.svg",
+    alt: "Where"
+  },
+  {
+    src: "why.svg",
+    alt: "Why"
+  }
+]
+
+const RoleContent = [
+  {
+    src: "speaker-with-thumbs.svg",
+    alt: "Speaker with thumbs"
+  },
+  {
+    src: "speaker-with-leg.svg",
+    alt: "Speaker with documents"
+  },
+  {
+    src: "speaker-with-pen.svg",
+    alt: "Speaker with pen"
+  }
+]
+
+const WriteContent = [
+  {
+    src: "leg-with-clock.svg",
+    alt: "Document with clock"
+  },
+  {
+    src: "leg-with-lightbulb.svg",
+    alt: "Document with clock"
+  },
+  {
+    src: "writing.svg",
+    alt: "Document with clock"
+  },
+  {
+    src: "opinions.svg",
+    alt: "Document with clock"
+  },
+  {
+    src: "respect-with-blob.svg",
+    alt: "Document with clock"
+  }
+]
+
 const Basics = () => {
   const { t } = useTranslation("learnComponents")
   interface BasicsContentItem {
@@ -29,20 +90,18 @@ const Basics = () => {
     src: string
     alt: string
   }
-  const basicsContent = t("basics.content", {
-    returnObjects: true
-  }) as BasicsContentItem[]
+
   return (
     <Container fluid="md" className="mt-3">
       <h1 className="fw-bold tracking-tighter lh-base">{t("basics.title")}</h1>
       <p className="fs-4 tracking-tight lh-base">{t("basics.intro")}</p>
-      {basicsContent.map((value, index) => (
+      {BasicsContent.map((value, index) => (
         <BasicsOfTestimonyCard
-          title={value.title}
+          title={t(`basics.contents.${index}.title`)}
           index={index}
-          key={value.title}
+          key={t(`basics.contents.${index}.title`)}
           alt={value.alt}
-          paragraph={value.paragraph}
+          paragraph={t(`basics.content.${index}.paragraph`)}
           src={`/${value.src}`}
         />
       ))}
