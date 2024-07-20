@@ -31,21 +31,15 @@
     "content": [
       {
         "title": "Your voice is instrumental to the legislative process",
-        "paragraph": "It could guide the agenda of the legislature, what topics and bills they consider, and how they decide to act and vote on each bill.",
-        "src": "speaker-with-thumbs.svg",
-        "alt": "Speaker with thumbs"
+        "paragraph": "It could guide the agenda of the legislature, what topics and bills they consider, and how they decide to act and vote on each bill."
       },
       {
         "title": "Your voice gives them insight",
-        "paragraph": "It can inform legislators of the benefits or negative consequences of proposed policies.",
-        "src": "speaker-with-leg.svg",
-        "alt": "Speaker with documents"
+        "paragraph": "It can inform legislators of the benefits or negative consequences of proposed policies."
       },
       {
         "title": "You can give suggestions",
-        "paragraph": "You can also recommend specific changes or improvements to legislation, whether you generally support or oppose the bill.",
-        "src": "speaker-with-pen.svg",
-        "alt": "Speaker with pen"
+        "paragraph": "You can also recommend specific changes or improvements to legislation, whether you generally support or oppose the bill."
       }
     ]
   },

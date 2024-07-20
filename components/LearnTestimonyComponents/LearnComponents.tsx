@@ -108,30 +108,19 @@ const Basics = () => {
     </Container>
   )
 }
-
 const Role = () => {
   const { t } = useTranslation("learnComponents")
-  interface RoleContentItem {
-    title: string
-    paragraph: string
-    src: string
-    alt: string
-  }
-  const roleContent = t("role.content", {
-    returnObjects: true
-  }) as RoleContentItem[]
-
   return (
     <Container fluid="md" className="mt-3">
       <h1 className="fw-bold tracking-tighter lh-base">{t("role.title")}</h1>
       <p className="fs-4 tracking-tight lh-base">{t("role.intro")}</p>
-      {roleContent.map((value, index) => (
+      {RoleContent.map((value, index) => (
         <RoleOfTestimonyCard
-          title={value.title}
+          title={t(`role.content.${index}.title`)}
           index={index}
-          key={value.title}
+          key={value.src}
           alt={value.alt}
-          paragraph={value.paragraph}
+          paragraph={t(`role.content.${index}.paragraph`)}
           src={`/${value.src}`}
         />
       ))}
