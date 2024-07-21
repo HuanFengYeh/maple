@@ -21,7 +21,7 @@ const StyledCardBody = styled(Card.Body)`
   line-height: 2.05rem;
 `
 
-const BasicsContent = [
+const BasicsSrcAlt = [
   {
     src: "who.svg",
     alt: "Who"
@@ -44,7 +44,7 @@ const BasicsContent = [
   }
 ]
 
-const RoleContent = [
+const RoleSrcAlt = [
   {
     src: "speaker-with-thumbs.svg",
     alt: "Speaker with thumbs"
@@ -59,7 +59,7 @@ const RoleContent = [
   }
 ]
 
-const WriteContent = [
+const WriteSrcAlt = [
   {
     src: "leg-with-clock.svg",
     alt: "Document with clock"
@@ -90,12 +90,11 @@ const Basics = () => {
     src: string
     alt: string
   }
-
   return (
     <Container fluid="md" className="mt-3">
       <h1 className="fw-bold tracking-tighter lh-base">{t("basics.title")}</h1>
       <p className="fs-4 tracking-tight lh-base">{t("basics.intro")}</p>
-      {BasicsContent.map((value, index) => (
+      {BasicsSrcAlt.map((value, index) => (
         <BasicsOfTestimonyCard
           title={t(`basics.contents.${index}.title`)}
           index={index}
@@ -114,7 +113,7 @@ const Role = () => {
     <Container fluid="md" className="mt-3">
       <h1 className="fw-bold tracking-tighter lh-base">{t("role.title")}</h1>
       <p className="fs-4 tracking-tight lh-base">{t("role.intro")}</p>
-      {RoleContent.map((value, index) => (
+      {RoleSrcAlt.map((value, index) => (
         <RoleOfTestimonyCard
           title={t(`role.content.${index}.title`)}
           index={index}
@@ -140,11 +139,19 @@ const Write = () => {
     returnObjects: true
   }) as WriteContentItem[]
 
+  const mergedContent = WriteSrcAlt.map((item, index) => ({
+    ...item,
+    ...writeContent[index]
+  }))
+
   return (
     <Container fluid="md" className="mt-3">
       <h1 className="fw-bold tracking-tighter lh-base">{t("write.title")}</h1>
       <p className="fs-4 tracking-tight lh-base">{t("write.intro")}</p>
-      <TestimonyCardList contents={writeContent} shouldAlternateImages={true} />
+      <TestimonyCardList
+        contents={mergedContent}
+        shouldAlternateImages={true}
+      />
     </Container>
   )
 }
