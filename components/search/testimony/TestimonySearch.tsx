@@ -104,10 +104,10 @@ const Layout = () => {
       const prevRefinements = prevState.refinementList
       const role =
         t === "Individuals"
-          ? ["user"]
+          ? ["user", "admin"]
           : t === "Organizations"
           ? ["organization"]
-          : ["user", "organization"]
+          : ["user", "admin", "organization"]
       return {
         ...prevState,
         refinementList: {
